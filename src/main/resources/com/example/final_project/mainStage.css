@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+.root {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Open Sans', sans-serif;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#addButton {
+    -fx-background-color: linear-gradient(#11998e, #38ef7d);
+    -fx-text-fill: white;
+}
+
+#editButton {
+    -fx-background-color: linear-gradient(#2193b0, #6dd5ed);
+    -fx-text-fill: white;
+
+}
+
+#deleteButton {
+    -fx-background-color: linear-gradient(#ED213A, #93291E);
+    -fx-text-fill: white;
+}
+
+#allRecords {
+    -fx-text-fill: white;
+    -fx-border-width: 0.7px;
+    -fx-border-color: white;
+
+}
+
+#inProgressRecords {
+    -fx-text-fill: white;
+    -fx-border-width: 0.7px;
+    -fx-border-color: white;
+
+}
+
+#completedRecords {
+    -fx-text-fill: white;
+    -fx-border-width: 0.7px;
+    -fx-border-color: white;
+}
+
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 15px;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
+    -fx-text-background-color: white;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #4E4E4E;
+    -fx-text-background-color: white;
+    -fx-font-family: 'Open Sans', sans-serif;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #636363;
+    -fx-text-background-color: white;
+    -fx-font-family: 'Open Sans', sans-serif;
+}
+
+.table-row-cell:selected {
+    -fx-border-color: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
+    -fx-border-width: 2px;
+}

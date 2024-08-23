@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.HelloController">
+  <children>
+    <SplitPane dividerPositions="0.15193164933135217" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane prefHeight="572.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to bottom, #0F2027, #203A43, #2C5364); -fx-text-background-color: white;" stylesheets="@mainStage.css">
+          <children>
+            <Label alignment="CENTER" layoutX="29.0" layoutY="6.0" minWidth="60.0" prefHeight="27.0" prefWidth="75.0" style="&#10;" text="Controls" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+                     <effect>
+                        <Glow level="0.4" />
+                     </effect>
+            </Label>
+                  <Button fx:id="addButton" layoutY="41.0" minWidth="53.0" contentDisplay="GRAPHIC_ONLY" onAction="#showAddTaskDialog" prefHeight="170.0" prefWidth="133.0" text="Add Task">
+                      <graphic>
+                          <ImageView preserveRatio="true">
+                              <Image url="@../final_project/icons/database-add.png"/>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+                  <Button fx:id="editButton" layoutY="381.0" minWidth="53.0" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#showEditTaskDialog" prefHeight="170.0" prefWidth="133.0" text="Edit Task">
+                      <graphic>
+                          <ImageView preserveRatio="true">
+                              <Image url="@../final_project/icons/gear.png"/>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+                  <Button fx:id="deleteButton" layoutY="211.0"  contentDisplay="GRAPHIC_ONLY" onAction="#deleteSelectedTask" prefHeight="170.0" prefWidth="133.0" text="Delete Task">
+                      <graphic>
+                          <ImageView preserveRatio="true">
+                              <Image url="@../final_project/icons/database-dash.png"/>
+                          </ImageView>
+                      </graphic>
+                  </Button>
+          </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="564.0" prefWidth="714.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="670.0" style="-fx-background-color: linear-gradient(to bottom, #0F2027, #203A43, #2C5364); -fx-text-background-color: white;">
+              <children>
+                        <Line endX="631.3333740234375" endY="1.1444091796875E-5" layoutX="122.0" layoutY="37.0" startX="-116.66667938232422" stroke="#0072eb" strokeWidth="3.0">
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Line>
+                <Label alignment="CENTER" font="$x1" layoutX="347.0" layoutY="4.0" prefHeight="27.0" prefWidth="60.0" style="&#10;" text="Tasks" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+                           <effect>
+                              <Glow level="0.4" />
+                           </effect></Label>
+                        <TableView fx:id="tableTasks" editable="true" layoutX="4.0" layoutY="41.0" prefHeight="525.0" prefWidth="732.0">
+                          <columns>
+                            <TableColumn fx:id="nameField" prefWidth="151.33336400985718" text="Name" />
+                            <TableColumn fx:id="descriptionField" prefWidth="338.66664123535156" text="Description" />
+                              <TableColumn fx:id="statusField" prefWidth="134.00009155273438" text="Status" />
+                              <TableColumn fx:id="deadlinePicker" prefWidth="124.0" text="Deadline" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" style="-fx-background-color: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);" VBox.vgrow="NEVER">
+      <children>
+            <Button fx:id="allRecords" minWidth="53.0" mnemonicParsing="false" onAction="#showAllTasks" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="All" />
+            <Button fx:id="inProgressRecords" minWidth="53.0" mnemonicParsing="false" onAction="#showInProgressTasks" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="In Progress" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
+            <Button fx:id="completedRecords" minWidth="53.0" mnemonicParsing="false" onAction="#showCompletedTasks" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Completed" wrapText="true" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
